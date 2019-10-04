@@ -1,0 +1,57 @@
+{
+  "name": "@h9h/word-collect",
+  "version": "1.0.0",
+  "description": "Small library to collect words, optionally using a stemmer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h9h/word-collect.git"
+  },
+  "keywords": [
+    "words",
+    "stemmer"
+  ],
+  "author": "h9h",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h9h/word-collect/issues"
+  },
+  "homepage": "https://github.com/h9h/word-collect#readme",
+  "engine": {
+    "node": ">= 0.11"
+  },
+  "engines": {
+    "node": "^8.12.0 || >=9.7.0"
+  },
+  "scripts": {
+    "test": "xo && nyc ava && tsd"
+  },
+  "xo": {
+    "semicolon": false
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib"
+  ],
+  "devDependencies": {
+    "@types/node": "^12.0.7",
+    "ava": "^2.1.0",
+    "coveralls": "^3.0.4",
+    "is-running": "^2.1.0",
+    "nyc": "^14.1.1",
+    "p-event": "^4.1.0",
+    "tempfile": "^3.0.0",
+    "tsd": "^0.7.3",
+    "xo": "^0.24.0"
+  },
+  "nyc": {
+    "exclude": [
+      "**/fixtures/**",
+      "**/test.js",
+      "**/test/**"
+    ]
+  },
+  "dependencies": {
+    "stemmer": "^1.0.4"
+  }
+}
