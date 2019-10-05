@@ -24,5 +24,4 @@ test('should collect with a german stemmer and stopwords', t => {
 	tokens.forEach(words.addWord)
 	t.is(words.getWordDistribution().length, 187)
 	t.is(words.getWordDistribution(2).length, 34)
-	console.log(words.getWords())
 })

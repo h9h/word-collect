@@ -25,6 +25,8 @@
 	"scripts": {
 		"test": "xo && nyc ava && tsd",
 		"debug": "nyc ava --inspect-brk",
+		"doc:html": "jsdoc ./index.js",
+		"doc:md": "jsdoc2md ./index.js",
 		"release": "env-cmd release-it"
 	},
 	"xo": {
@@ -43,6 +45,8 @@
 		"coveralls": "^3.0.4",
 		"env-cmd": "^10.0.1",
 		"is-running": "^2.1.0",
+		"jsdoc": "^3.6.3",
+		"jsdoc-to-markdown": "^5.0.1",
 		"nyc": "^14.1.1",
 		"p-event": "^4.1.0",
 		"release-it": "^12.4.2",
