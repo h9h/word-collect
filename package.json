@@ -25,9 +25,7 @@
 	"scripts": {
 		"test": "xo && nyc ava && tsd",
 		"debug": "nyc ava --inspect-brk",
-		"release:major": "cross-env GITHUB_TOKEN=%GITHUB_TOKEN% release-it --major",
-		"release:minor": "release-it --minor",
-		"release:patch": "release-it --patch"
+		"release": "env-cmd release-it"
 	},
 	"xo": {
 		"semicolon": false
@@ -43,7 +41,7 @@
 		"ava": "^2.1.0",
 		"codacy-coverage": "^3.4.0",
 		"coveralls": "^3.0.4",
-		"cross-env": "^6.0.3",
+		"env-cmd": "^10.0.1",
 		"is-running": "^2.1.0",
 		"nyc": "^14.1.1",
 		"p-event": "^4.1.0",
