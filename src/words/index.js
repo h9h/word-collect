@@ -1,3 +1,5 @@
+/* eslint operator-linebreak: "off" */
+
 function hasNumber(myString) {
 	return /\d/.test(myString)
 }
@@ -11,6 +13,8 @@ class Words {
 		this.setStemmer = this.setStemmer.bind(this)
 		this.setStopwords = this.setStopwords.bind(this)
 		this.addStopwords = this.addStopwords.bind(this)
+		this.getOrCreateItem = this.getOrCreateItem.bind(this)
+		this.ignoreWord = this.ignoreWord.bind(this)
 		this.addWord = this.addWord.bind(this)
 		this.getWords = this.getWords.bind(this)
 		this.getWordDistribution = this.getWordDistribution.bind(this)
@@ -22,7 +26,7 @@ class Words {
 	}
 
 	setStopwords(stopwords) {
-		this.stopwords = stopwords
+		this.stopwords = [...stopwords]
 		return this
 	}
 
@@ -34,30 +38,45 @@ class Words {
 		if (this.stopwords) {
 			this.stopwords.push(...stopwords)
 		} else {
-			this.stopwords = stopwords
+			this.setStopwords(stopwords)
 		}
 
 		return this
 	}
 
+	getOrCreateItem(stemm) {
+		if (this.words.has(stemm)) {
+			return this.words.get(stemm)
+		}
+
+		return {
+			stemm,
+			links: [],
+			title: null,
+			count: 0
+		}
+	}
+
+	ignoreWord(word) {
+		const lowerCaseWord = word.toLowerCase()
+
+		return (
+			word.length === 0
+			|| hasNumber(word)
+			|| this.stopwords.indexOf(lowerCaseWord) > -1
+		)
+	}
+
 	addWord(word, {title, link}) {
-		if (word.length === 0 || hasNumber(word)) {
+		if (this.ignoreWord(word)) {
 			return
 		}
 
 		const lowerCaseWord = word.toLowerCase()
-		if (this.stopwords.indexOf(lowerCaseWord) > -1) {
-			return
-		}
-
 		const stemm = this.stemmer ? this.stemmer(lowerCaseWord) : lowerCaseWord
-		const item = this.words.has(stemm) ? this.words.get(stemm) : {
-			stemm,
-			links: [],
-			title: title || word,
-			count: 0
-		}
+		const item = this.getOrCreateItem(stemm)
 		item.count += 1
+		item.title = title || word
 		if (link) {
 			item.links.push(link)
 		}

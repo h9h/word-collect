@@ -1,4 +1,5 @@
 const german = require('./german-stopwords')
+const english = require('./english-stopwords')
 
 /**
  * Returns an array of stopwords
@@ -8,6 +9,8 @@ const german = require('./german-stopwords')
  */
 function getStopwords(locale) {
 	switch (locale) {
+		case 'en':
+			return english
 		default:
 			return german
 	}

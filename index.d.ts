@@ -1,6 +1,7 @@
 /// <reference types="node"/>
 
 
-export function getStemmer(locale: string): (word: string) => string;
-export function getStopwords(locale: string): [string];
+export const getStemmer: (locale: string) => (word: string) => string;
+export const getStopwords: (locale: string) => [string];
+
 

@@ -12,6 +12,5 @@ test('Should stemm stopwords', t => {
 	const stemmedStopwords = stopwords.map(w => german(w))
 		.filter((w, i) => stopwords.indexOf(w) === i)
 
-	console.log(stemmedStopwords)
 	t.is(stemmedStopwords.length, 100)
 })

@@ -8,8 +8,6 @@ const collectWords = (locale, text, additionalStopwords = []) => {
 	const stopwords = getStopwords(locale)
 	words.setStopwords(stopwords)
 	words.addStopwords(additionalStopwords)
-	words.addStopwords(null)
-	words.addStopwords([])
 
 	const stemmer = getStemmer(locale)
 	words.setStemmer(stemmer)
