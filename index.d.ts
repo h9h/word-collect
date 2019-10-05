@@ -4,17 +4,17 @@ type wordType = {
     stemm: string,
     links: [string],
     title: string,
-    count: number
+    count: number,
 }
 
 declare class Words {
     constructor();
-    setStemmer(stemmer: stemmer): Words;
-    setStopwords(stopwords: [string]): Words;
-    addStopwords(stopwords: [string]): Words;
-    addWord(word: string): void;
-    getWords(minCount?: number): [wordType];
-    getWordDistribution(minCount?: number): [[string, number]];
+    public setStemmer(stemmer: stemmer): Words;
+    public setStopwords(stopwords: [string]): Words;
+    public addStopwords(stopwords: [string]): Words;
+    public addWord(word: string): void;
+    public getWords(minCount?: number): [wordType];
+    public getWordDistribution(minCount?: number): [[string, number]];
 }
 
 export const getStemmer: (locale: string) => (word: string) => string;
