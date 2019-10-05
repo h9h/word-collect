@@ -10,6 +10,7 @@ class Words {
 
 		this.setStemmer = this.setStemmer.bind(this)
 		this.setStopwords = this.setStopwords.bind(this)
+		this.addStopwords = this.addStopwords.bind(this)
 		this.addWord = this.addWord.bind(this)
 		this.getWords = this.getWords.bind(this)
 		this.getWordDistribution = this.getWordDistribution.bind(this)
@@ -22,6 +23,20 @@ class Words {
 
 	setStopwords(stopwords) {
 		this.stopwords = stopwords
+		return this
+	}
+
+	addStopwords(stopwords) {
+		if (!stopwords || stopwords.length === 0) {
+			return this
+		}
+
+		if (this.stopwords) {
+			this.stopwords.push(...stopwords)
+		} else {
+			this.stopwords = stopwords
+		}
+
 		return this
 	}
 
