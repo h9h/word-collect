@@ -84,8 +84,8 @@ class Words {
 		this.words.set(stemm, item)
 	}
 
-	getWords() {
-		return this.words.values()
+	getWords(minCount = 0) {
+		return [...this.words.values()].filter(item => item.count >= minCount)
 	}
 
 	getWordDistribution(minCount = 0) {
