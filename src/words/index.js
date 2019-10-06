@@ -30,7 +30,7 @@ class Words {
 	/**
 	 * Sets the stemmer to be used for stemming new words.
 	 *
-	 * @param stemmer a stemmer function: word => stemm
+	 * @param {function} stemmer a stemmer function: word => stemm
 	 * @returns {Words} return this
 	 */
 	setStemmer(stemmer) {
@@ -41,7 +41,7 @@ class Words {
 	/**
 	 * Sets the stopwords: the array of words, which will be ignored.
 	 *
-	 * @param stopwords an array of words
+	 * @param {[string]} stopwords an array of words
 	 * @returns {Words} return this
 	 */
 	setStopwords(stopwords) {
@@ -52,7 +52,7 @@ class Words {
 	/**
 	 * Adds additional stopwords. This may be called repeatedly.
 	 *
-	 * @param stopwords an array of words
+	 * @param {[string]} stopwords an array of words
 	 * @returns {Words} return this
 	 */
 	addStopwords(stopwords) {
@@ -95,9 +95,9 @@ class Words {
 	/**
 	 * Ingest a word into the collection.
 	 *
-	 * @param word the word to be ingested. If it is found within the stopwords, it will be ignored.
-	 * @param title an optional title under which this word will be presented
-	 * @param link an optional link
+	 * @param {string} word the word to be ingested. If it is found within the stopwords, it will be ignored.
+	 * @param {string} title an optional title under which this word will be presented
+	 * @param {string} link an optional link
 	 */
 	addWord(word, {title, link}) {
 		if (this.ignoreWord(word)) {

@@ -1,5 +1,5 @@
 /**
- * word-collect module
+ * Module word-collect
  *
  * Given a text, this modules offers methods to
  * - break the text into words
