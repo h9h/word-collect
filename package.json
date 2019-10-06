@@ -28,8 +28,8 @@
 		"debug": "nyc ava --inspect-brk",
 		"doc:html": "jsdoc ./index.js",
 		"doc:md": "jsdoc2md ./index.js",
-		"build": "ncc build ./index.js -o dist",
-		"release": "env-cmd release-it"
+		"build": "ncc build ./index.js -m -o dist",
+		"release": "npm run build && env-cmd release-it"
 	},
 	"xo": {
 		"semicolon": false
