@@ -1,22 +1,22 @@
 # word-collect
+
 Simple Library to collect word-sets, optionally using stemming algorithms
 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![npm (scoped)](https://img.shields.io/npm/v/@h9h/word-collect)](https://npmjs.org/package/@h9h/words-collect "View this project on npm")
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9baa6478b87a45f6bc73b5c8ac63edd6)](https://www.codacy.com/manual/h9h/word-collect?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=h9h/word-collect&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9baa6478b87a45f6bc73b5c8ac63edd6)](https://www.codacy.com/manual/h9h/word-collect?utm_source=github.com&utm_medium=referral&utm_content=h9h/word-collect&utm_campaign=Badge_Grade)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
 ## Usage
 
-```
-const { collectWords } = require('../src/collector')
+    const { collectWords } = require('../src/collector')
 
-const text = '...'
+    const text = '...'
 
-const result = collectWords('de', text)
-console.log(result.getWordDistribution(3))
-```
+    const result = collectWords('de', text)
+    console.log(result.getWordDistribution(3))
 
+<!--lint disable no-duplicate-headings-->
 ### Example
 
 #### Mephistopheles
@@ -41,6 +41,7 @@ Mein eigentliches Element.
 #### Faust
 
 Du nennst dich einen Teil, und stehst doch ganz vor mir?
+<!--lint enable no-duplicate-headings-->
 
 ### Result of collectWords
 
@@ -49,15 +50,16 @@ Du nennst dich einen Teil, und stehst doch ganz vor mir?
             0 = "stets"  // Word
             1 = 3        // Count
 
-
 ## @h9h/word-collect
+
 word-collect module
 
 Given a text, this modules offers methods to
-- break the text into words
-- removes stop-words (aka noise)
-- stemm those words (reduzing them to their base form)
-- and counting the occurrences of these stemms
+
+-   break the text into words
+-   removes stop-words (aka noise)
+-   stemm those words (reduzing them to their base form)
+-   and counting the occurrences of these stemms
 
 The result is a distribution of the main words in this text, giving a quick
 overview what it's all about.

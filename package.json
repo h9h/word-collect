@@ -25,6 +25,8 @@
 	},
 	"scripts": {
 		"test": "xo && nyc ava && tsd",
+		"lint:md": "remark .",
+		"fix:md": "remark . -o",
 		"debug": "nyc ava --inspect-brk",
 		"doc:html": "jsdoc ./index.js",
 		"doc:md": "jsdoc2md ./index.js",
@@ -33,6 +35,11 @@
 	},
 	"xo": {
 		"semicolon": false
+	},
+	"remarkConfig": {
+		"plugins": [
+			"remark-preset-lint-recommended"
+		]
 	},
 	"files": [
 		"index.js",
@@ -53,6 +60,9 @@
 		"nyc": "^14.1.1",
 		"p-event": "^4.1.0",
 		"release-it": "^12.4.2",
+		"remark-cli": "^7.0.0",
+		"remark-lint": "^6.0.5",
+		"remark-preset-lint-recommended": "^3.0.3",
 		"tempfile": "^3.0.0",
 		"tsd": "^0.7.3",
 		"xo": "^0.24.0"
