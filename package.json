@@ -2,6 +2,7 @@
 	"name": "@h9h/word-collect",
 	"version": "1.0.4",
 	"description": "Small library to collect words, optionally using a stemmer",
+	"main": "./dist/index.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/h9h/word-collect.git"
@@ -27,6 +28,7 @@
 		"debug": "nyc ava --inspect-brk",
 		"doc:html": "jsdoc ./index.js",
 		"doc:md": "jsdoc2md ./index.js",
+		"build": "parcel build ./index.js",
 		"release": "env-cmd release-it"
 	},
 	"xo": {
