@@ -1,6 +1,6 @@
 {
 	"name": "@h9h/word-collect",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Small library to collect words, optionally using a stemmer",
 	"repository": {
 		"type": "git",
