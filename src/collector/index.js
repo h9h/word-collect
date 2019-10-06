@@ -12,8 +12,10 @@ const collectWords = (locale, text, additionalStopwords = []) => {
 	const stemmer = getStemmer(locale)
 	words.setStemmer(stemmer)
 
-	const tokens = text.replace(/\n/g, ' ').split(/[ .'",;:\-!?()[\]@<=>%§$&#+{|}]/)
-	tokens.forEach(words.addWord)
+	if (text && text.replace) {
+		const tokens = text.replace(/\n/g, ' ').split(/[ .'",;:\-!?()[\]@<=>%§$&#+{|}]/)
+		tokens.forEach(words.addWord)
+	}
 
 	return words
 }

@@ -8,6 +8,11 @@ test('collectWords', t => {
 	t.is(result.getWordDistribution(5).length, 213)
 })
 
+test('no words', t => {
+	const result = collectWords('de', null)
+	t.is(result.getWordDistribution().length, 0)
+})
+
 test('Faust', t => {
 	const text = `
 Mephistopheles:
